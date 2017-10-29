@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>630</width>
+    <height>460</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>FTP Transfer Client</string>
+  </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>591</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="topLayout">
+     <item>
+      <widget class="QPushButton" name="btn_path">
+       <property name="text">
+        <string>Set scan directory</string>
+       </property>
+       <property name="icon">
+        <iconset resource="resource.qrc">
+         <normaloff>:/icons/Folder.png</normaloff>:/icons/Folder.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="txt_path"/>
+     </item>
+     <item>
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnSync">
+       <property name="text">
+        <string>Pause Sync</string>
+       </property>
+       <property name="icon">
+        <iconset resource="resource.qrc">
+         <normaloff>:/icons/Pause.png</normaloff>:/icons/Pause.png</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>630</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionSettings"/>
+    <addaction name="separator"/>
+    <addaction name="action_Close"/>
+   </widget>
+   <widget class="QMenu" name="menuAppearence">
+    <property name="title">
+     <string>Appearence</string>
+    </property>
+    <addaction name="actionSwitch_Theme"/>
+   </widget>
+   <addaction name="menuSettings"/>
+   <addaction name="menuAppearence"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionSettings">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/icons/Settings.png</normaloff>:/icons/Settings.png</iconset>
+   </property>
+   <property name="text">
+    <string>Settings</string>
+   </property>
+  </action>
+  <action name="actionSwitch_Theme">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/icons/theme.png</normaloff>:/icons/theme.png</iconset>
+   </property>
+   <property name="text">
+    <string>Switch Theme</string>
+   </property>
+   <property name="toolTip">
+    <string>Change theme</string>
+   </property>
+  </action>
+  <action name="action_Close">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/icons/icons8-Close Window.png</normaloff>:/icons/icons8-Close Window.png</iconset>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>btn_path</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onClickSetDirectory()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>82</x>
+     <y>46</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>113</x>
+     <y>341</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnSync</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onChangeSyncState()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>579</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>545</x>
+     <y>175</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>txt_path</sender>
+   <signal>editingFinished()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onDirPathChange()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>249</x>
+     <y>46</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>246</x>
+     <y>133</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onChangeSyncState()</slot>
+  <slot>onDirPathChange()</slot>
+ </slots>
+</ui>

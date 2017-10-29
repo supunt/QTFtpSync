@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/ftp.ico</file>
+        <file>icons/ftp.png</file>
+        <file>icons/Settings.png</file>
+        <file>icons/Folder.png</file>
+        <file>icons/icons8-Upload To FTP.png</file>
+        <file>icons/Pause.png</file>
+        <file>icons/theme.png</file>
+        <file>icons/icons8-Close Window.png</file>
+    </qresource>
+</RCC>
