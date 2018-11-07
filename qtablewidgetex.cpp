@@ -16,7 +16,8 @@ void QTableWidgetEx::Insert_Row(QFileInfo* qfi, int& rownum)
     rownum  = rowCount();
     insertRow(rownum);
     qint64 temp = 0;
-    setCellData(rownum,0,&qfi->fileName(),&qc);
+    QString fileName = qfi->fileName();
+    setCellData(rownum,0,&fileName,&qc);
     temp = qfi->size();
     QProgressBar* pgb = new QProgressBar();
 
@@ -28,10 +29,12 @@ void QTableWidgetEx::Insert_Row(QFileInfo* qfi, int& rownum)
         pgb->setMaximum(temp);
 
     setCellData(rownum,1,&temp,&qc);
-    setCellData(rownum,2,&qfi->created(),&qc);
+    QDateTime d = qfi->created();
+    setCellData(rownum,2,&d,&qc);
     setCellData(rownum,3,pgb,&qc);
-    setCellData(rownum,4,&qfi->fileName(),&qc);
-    setCellData(rownum,5,&qfi->absolutePath(),&qc);
+    setCellData(rownum,4,&fileName,&qc);
+    QString path = qfi->absolutePath();
+    setCellData(rownum,5,&path(),&qc);
 
     resizeRowsToContents();
     resizeColumnsToContents();
