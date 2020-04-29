@@ -25,5 +25,5 @@ And much more that I have forgotten. :D
 8) Log Path : Where the log is written
 9) Backup Path : Files transferred during the operation hours are put in to this folder when the 'Housekeeping Time' is reached
 
-Limitations.
+## Limitations.
 1) You can select a remote folder to a depth on one only.
