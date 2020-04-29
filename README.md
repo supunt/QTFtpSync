@@ -1,10 +1,11 @@
-# QTFtpSync
+## QTFtpSync
 This is  FTP tool made to sync a local folder to a remote location.
 
 This is a rough tool put together quickly. Hence it is not the nicest code.
 This uses a legacy FTP library in QT 4.2.
 
-This is does some fun stuff.
+## This is does some fun stuff.
+
 1) Syncs the folder that is pointed at in a regular interval.
 2) Re-try connections and transfers.
 3) Writes a log.
@@ -13,7 +14,7 @@ This is does some fun stuff.
 
 And much more that I have forgotten. :D
 
-Settings
+## Settings
 1) Sync Interval : in seconds
 2) Remote Host : Where the files are transfered to.
 3) Remote user : FTP user (Leave empty for anonymous)
